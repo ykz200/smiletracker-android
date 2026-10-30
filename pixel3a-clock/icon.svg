@@ -1,50 +1,56 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <defs>
-    <radialGradient id="glow13" cx="50%" cy="46%" r="54%">
-      <stop offset="0%" stop-color="#9ac4ff" stop-opacity="0.22"/>
-      <stop offset="50%" stop-color="#7eb8ff" stop-opacity="0.09"/>
+    <!-- v15: 脉冲光晕 (4层渐变) -->
+    <radialGradient id="glow15" cx="50%" cy="46%" r="56%">
+      <stop offset="0%" stop-color="#b8e0c8" stop-opacity="0.24"/>
+      <stop offset="35%" stop-color="#9ac4ff" stop-opacity="0.12"/>
+      <stop offset="70%" stop-color="#c8b8ff" stop-opacity="0.06"/>
       <stop offset="100%" stop-color="#7eb8ff" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="iris13" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#a8d4ff" stop-opacity="0.08"/>
-      <stop offset="25%" stop-color="#9ac4ff" stop-opacity="0.06"/>
-      <stop offset="50%" stop-color="#c4d4ff" stop-opacity="0.07"/>
-      <stop offset="75%" stop-color="#9ab4e8" stop-opacity="0.06"/>
-      <stop offset="100%" stop-color="#a8d4ff" stop-opacity="0.08"/>
+    <!-- v15: 情绪虹彩 -->
+    <linearGradient id="iris15" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b8e0c8" stop-opacity="0.07"/>
+      <stop offset="20%" stop-color="#a8d4ff" stop-opacity="0.06"/>
+      <stop offset="40%" stop-color="#d4c8ff" stop-opacity="0.05"/>
+      <stop offset="60%" stop-color="#ffd8b8" stop-opacity="0.04"/>
+      <stop offset="80%" stop-color="#9ac4ff" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#b8e0c8" stop-opacity="0.07"/>
     </linearGradient>
-    <!-- v13: 沙纹涟漪 -->
-    <radialGradient id="ripple13" cx="50%" cy="60%" r="40%">
-      <stop offset="60%" stop-color="#9ac4ff" stop-opacity="0"/>
-      <stop offset="75%" stop-color="#9ac4ff" stop-opacity="0.06"/>
-      <stop offset="85%" stop-color="#9ac4ff" stop-opacity="0.03"/>
-      <stop offset="100%" stop-color="#9ac4ff" stop-opacity="0"/>
+    <!-- v15: 花粉漂浮感 -->
+    <radialGradient id="pollen15" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#ffe8a0" stop-opacity="0.06"/>
+      <stop offset="80%" stop-color="#ffe8a0" stop-opacity="0.01"/>
+      <stop offset="100%" stop-color="#ffe8a0" stop-opacity="0"/>
     </radialGradient>
-    <!-- v13: 矿物边缘光泽 -->
-    <linearGradient id="mineral13" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#c8dff8" stop-opacity="0.12"/>
-      <stop offset="50%" stop-color="#9ac4ff" stop-opacity="0.02"/>
-      <stop offset="100%" stop-color="#c8dff8" stop-opacity="0.08"/>
-    </linearGradient>
+    <!-- v15: 灵魂花瓣 -->
+    <radialGradient id="petal15" cx="50%" cy="50%" r="30%" fx="30%" fy="30%">
+      <stop offset="0%" stop-color="#ffb8d0" stop-opacity="0.09"/>
+      <stop offset="100%" stop-color="#ffb8d0" stop-opacity="0"/>
+    </radialGradient>
   </defs>
+  <!-- 纯黑 OLED 底 -->
   <rect width="512" height="512" rx="128" fill="#000000"/>
-  <rect x="96" y="96" width="320" height="320" rx="80" fill="url(#iris13)"/>
-  <circle cx="256" cy="244" r="148" fill="url(#glow13)"/>
-  <!-- v13: 沙纹涟漪同心环 -->
-  <circle cx="256" cy="310" rx="100" ry="20" fill="url(#ripple13)"/>
-  <circle cx="256" cy="310" rx="80" ry="15" fill="none" stroke="#9ac4ff" stroke-width="0.3" opacity="0.06"/>
-  <circle cx="256" cy="310" rx="60" ry="11" fill="none" stroke="#9ac4ff" stroke-width="0.3" opacity="0.04"/>
-  <!-- 矿物边缘 -->
-  <circle cx="256" cy="244" r="134" fill="none" stroke="url(#mineral13)" stroke-width="1.2"/>
-  <circle cx="256" cy="244" r="130" fill="none" stroke="#1a1a2e" stroke-width="0.5"/>
-  <circle cx="256" cy="244" r="102" fill="none" stroke="#7eb8ff" stroke-width="0.4" opacity="0.12"/>
-  <!-- 时钟数字 -->
+  <!-- 光晕层 -->
+  <circle cx="256" cy="244" r="155" fill="url(#glow15)"/>
+  <!-- 情绪虹彩层 -->
+  <rect x="100" y="100" width="312" height="312" rx="80" fill="url(#iris15)"/>
+  <!-- 花粉层 -->
+  <circle cx="180" cy="180" r="80" fill="url(#pollen15)"/>
+  <circle cx="350" cy="160" r="60" fill="url(#pollen15)"/>
+  <circle cx="320" cy="350" r="70" fill="url(#pollen15)"/>
+  <!-- 灵魂花瓣 -->
+  <circle cx="256" cy="244" r="110" fill="url(#petal15)"/>
+  <!-- 时钟表盘边缘 -->
+  <circle cx="256" cy="244" r="134" fill="none" stroke="#3a4a6a" stroke-width="0.6" opacity="0.4"/>
+  <circle cx="256" cy="244" r="126" fill="none" stroke="#7eb8ff" stroke-width="0.3" opacity="0.08"/>
+  <!-- 数字时刻 -->
   <text x="256" y="244" text-anchor="middle" dominant-baseline="central"
         font-family="ui-rounded, SF Pro Rounded, Roboto, system-ui, sans-serif" 
-        font-weight="200" font-size="168" fill="#8ab8ff"
-        letter-spacing="-5">10:09</text>
-  <!-- 秒针点 · 浮动 -->
-  <circle cx="256" cy="302" r="5" fill="#7eb8ff" opacity="0.45">
-    <animate attributeName="cy" values="302;278;302" dur="2.6s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.45;0.8;0.45" dur="2.6s" repeatCount="indefinite"/>
+        font-weight="200" font-size="160" fill="#8ab8ff"
+        letter-spacing="-4">10:09</text>
+  <!-- 灵魂秒针 · 呼吸 -->
+  <circle cx="256" cy="298" r="4.5" fill="#b8e0c8" opacity="0.55">
+    <animate attributeName="r" values="4;6;4" dur="2.4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.55;0.85;0.55" dur="2.4s" repeatCount="indefinite"/>
   </circle>
 </svg>
